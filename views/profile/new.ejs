@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+<div id="landing-header">
+<h4 style="margin-top:5rem;" >Add info</h4>
+<form action="/profiles" method="POST">
+    <input type="text" name="userd[name]" placeholder="Name" required>
+    <input type="number" name="userd[age]" placeholder="Age" required>
+    <input type="text" name="userd[image]" placeholder="Image url" required>
+    <br>
+    <select style="margin-top:1.2rem;" name="userd[gender]" >
+        <option selected>Choose your Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        
+      </select>
+      <br>
+      <input style="margin-top:1.2rem;" type="text" name=userd[city] placeholder="City">
+      <br>
+    <input style="margin-top:1.2rem;" type="submit">
+    
+</form>
+</div>
+ 
+<%- include('../partials/footers'); %>

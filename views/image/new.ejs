@@ -1,0 +1,12 @@
+  
+<%- include('../partials/header'); %>
+<div class="container">
+    <h3 style="margin-top:5rem;">Add new photo</h3>
+<form  action="/profiles/<%= profile._id%>/image" method="POST">
+    <input type="text" name="image[url]" placeholder="Enter URL">
+  
+    <button>Submit</button>
+</form>
+</div>
+
+    <%- include('../partials/footers'); %>

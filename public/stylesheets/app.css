@@ -1,0 +1,40 @@
+body {
+      background: white;
+}
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 10vh;
+}
+#landing-header h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+#textt{
+  background:gainsboro;
+  width:700px;
+  height:100px;
+}
+
+body{
+  background: #A1FFCE;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+#s:hover {
+  background-color: blue;
+  color: white;
+  font-size:20px;
+}
+#d:hover {
+  background-color: red;
+  color: white;
+}

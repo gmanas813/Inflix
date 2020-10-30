@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Profiles</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/ap.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+         <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Inflix<i class="fa fa-users" aria-hidden="true"></i></a>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav ml-auto"
+        <% if(!currentUser){ %>
+      <li class="nav-item active">
+        <a class="nav-link" href="/register">Register </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <% } %>
+      <% if(currentUser){ %>
+            <li class="nav-item "><a class="nav-link" href="#">Signed In As <%= currentUser.username %></a></li>
+      <li class="nav-item active ">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</nav>
+<div class="container" id="landing-header">
+    <header style="margin-top:5rem;" class="jumbotron">
+        <div class="container">
+        <h3><%=message%></h3>
+         <h3><%=success%></h3>
+    <h1 style="text-align:center;">Welcome to info page</h1>
+    <div style="text-align:center;">
+    <a  class="btn btn-primary" href="/profiles/new">New</a>
+    </div>
+        </div>
+    </header>
+
+
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+   
+   <% user.forEach(function(user){ %>
+   <div style="margin-top:2rem;"  class="col-md-4 col-sm-6 d-flex">
+   <div class="card" style="width: 18rem;">
+  <img src="<%= user.image %>" class="card-img-top" alt="Unavailable" height="200" width="150">
+  <div class="card-body">
+    <h5 class="card-title"><%= user.name.toUpperCase() %></h5>
+    
+    <a href="/profiles/<%= user._id %>" class="btn btn-primary">More Info</a>
+  </div>
+</div>
+</div>
+   <% }) %>
+   </div>
+   
+</div>
+ 
+<%- include('../partials/footers'); %>

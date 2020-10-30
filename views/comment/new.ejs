@@ -1,0 +1,11 @@
+<%- include('../partials/header'); %>
+<div class="container">
+    <h3 style="margin-top:5rem;">Add new comment</h3>
+<form  action="/profiles/<%= profile._id%>/comments" method="POST">
+    <input type="text" name="comment[text]" placeholder="write comment here">
+  
+    <button>Submit</button>
+</form>
+</div>
+
+    <%- include('../partials/footers'); %>

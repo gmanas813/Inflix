@@ -1,0 +1,67 @@
+  
+<%- include('../partials/header'); %>
+
+<div  id="landing-header" style="margin-top:10px; " >
+<div class="row" style="margin-top:10px">
+    <div class="col-lg-4">
+        <div class="thumbnail">
+<img style="margin-top:1.4rem;" src="<%= profile.image%>" height="150" width="200">
+<% profile.images.forEach(function(image){ %>
+<div class="thumbnail">
+<img  style="margin-top:1.4rem;" src="<%= image.url%>" height="150" width="200" >
+</div>
+<% }) %>
+</div> 
+    </div>
+    <div class="col-lg-4">
+         <h3 style="margin-top:1rem;"><%=message%></h3>
+         <h3><%=success%></h3>
+        
+<h1 style="color:black; font-size:40px;"><%= profile.name.toUpperCase() %></h1>
+<h3>Age : <%= profile.age %></h3>
+<h3>City : <%= profile.city%> </h3>
+<h3>Gender : <%= profile.gender%></h3>
+<h3>Username : <%= profile.author.username%></h3>
+
+    </div>
+    <div class="col-lg-2">
+        
+         <% if(currentUser && profile.author.id.equals(currentUser._id)){%>
+<!-- <a href="/profiles/<%= profile._id%>/images/new">ADD PHOTOS</a> -->
+ <form  action="/profiles/<%= profile._id%>/image" method="POST">
+    <input type="text" name="image[url]" placeholder="Enter URL for new Photo" style="height:40px;">
+  
+    <button id="s" style="margin-top:5px;   font-size:17px;">Submit</button>
+</form>
+ <br>
+<a href="/profiles/<%= profile._id%>/edit" class="btn btn-outline-primary" style="margin-top:5px;">Edit Profile</a>
+<form action="/profiles/<%=profile._id%>?_method=DELETE" method="POST" style="margin-top:5px;">
+    <button class="btn btn-outline-danger" style="margin-top:5px;" id="d">Delete Profile</button>
+</form>
+<% } %>
+    </div>
+    
+ 
+<div class="col-lg-2">
+    
+    <div class="container">
+<!-- <a href="/profiles/<%= profile._id%>/comments/new" style="margin-bottom:10px;" >ADD COMMENT</a> -->
+<form  action="/profiles/<%= profile._id%>/comments" method="POST">
+    <input type="text" name="comment[text]" placeholder="Write comment here" style="height:40px;">
+  
+    <button id="s" style="margin-top:5px;   font-size:17px;" >Submit</button>
+</form>
+<% profile.comments.forEach(function(comment){ %>
+ <p ><b><%= comment.author.username %></b>-<%= comment.text %></p>   
+ <% if(currentUser && comment.author.id.equals(currentUser._id)){%>
+
+ <form action="/profiles/<%=profile._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+    <button id="d">Delete your comment</button>
+</form>
+<% } %>
+<% }) %>
+</div>
+</div>
+</div>
+</div>
+<%- include('../partials/footers'); %>
