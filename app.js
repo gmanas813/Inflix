@@ -3,7 +3,7 @@ var express=require("express");
 
 var mongoose=require("mongoose");
 var reqs=require("request");
-mongoose.connect("mongodb://localhost/rockershocks5");
+//mongoose.connect("mongodb://localhost/rockershocks5");
 mongoose.connect("mongodb+srv://rocko:rockalways@rockershock-ptdgc.mongodb.net/test?retryWrites=true&w=majority");
 //mongoose.connect("mongodb+srv://rocko:rockalways@rockershock-ptdgc.mongodb.net/test?retryWrites=true&w=majority");
 var methodoverride=require("method-override");
