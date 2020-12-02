@@ -3,8 +3,8 @@ var express=require("express");
 
 var mongoose=require("mongoose");
 var reqs=require("request");
-//mongoose.connect("mongodb://localhost/rockershocks5");
-mongoose.connect("mongodb+srv://rocko:rockalways@rockershock-ptdgc.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/rockershocks5");
+//mongoose.connect("mongodb+srv://rocko:rockalways@rockershock-ptdgc.mongodb.net/test?retryWrites=true&w=majority");
 //mongoose.connect("mongodb+srv://rocko:rockalways@rockershock-ptdgc.mongodb.net/test?retryWrites=true&w=majority");
 var methodoverride=require("method-override");
 var flash=require("connect-flash");
@@ -45,7 +45,7 @@ app.use(function(req, res, next){
  });
  
  const sgMail=require('@sendgrid/mail');
-sgMail.setApiKey("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");
+sgMail.setApiKey("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");
 const crypto=require('crypto');
  
  app.get("/profiles",function(req,res){
