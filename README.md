@@ -1,4 +1,5 @@
 # Inflix
+Website Link : https://inflix.herokuapp.com/
 
 Inflix Instagram and Netflix. Here the main features of website include create profile after user authentication. Also you can comment on others profile and upload your photos.
 
