@@ -18,6 +18,12 @@ var app=express();
 var Profile=require("./models/profile.js");
 var Comment=require("./models/comment.js");
 var Photo=require("./models/image.js");
+const dotenv = require('dotenv');
+dotenv.config();
+
+const SENDGRID_KEEY=process.env.SENDGRID_KEY;
+
+
 app.use(methodoverride("_method"));
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
@@ -45,7 +51,7 @@ app.use(function(req, res, next){
  });
  
  const sgMail=require('@sendgrid/mail');
-sgMail.setApiKey("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");
+sgMail.setApiKey(SENDGRID_KEEY);
 const crypto=require('crypto');
  
  app.get("/profiles",function(req,res){
