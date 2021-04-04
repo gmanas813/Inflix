@@ -3,7 +3,7 @@
 
 <div  id="landing-header" style="margin-top:10px; " >
 <div class="row" style="margin-top:10px">
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <div class="thumbnail">
 <img style="margin-top:1.4rem;" src="<%= profile.image%>" height="150" width="200">
 <% profile.images.forEach(function(image){ %>
@@ -13,7 +13,10 @@
 <% }) %>
 </div> 
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-5 ">
+    <div class="jumbotron jumbotron-fluid" style="background: floralwhite;">
+
+    
          <h3 style="margin-top:1rem;"><%=message%></h3>
          <h3><%=success%></h3>
         
@@ -23,6 +26,7 @@
 <h3>Gender : <%= profile.gender%></h3>
 <h3>Username : <%= profile.author.username%></h3>
 
+    </div>
     </div>
     <div class="col-lg-2">
         
